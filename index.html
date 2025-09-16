@@ -372,6 +372,34 @@ form > * { min-width: 0; }
   body.menu-open { overflow: hidden; padding-right: 0; }
 }
 
+
+/* ---------- Force hamburger visible and clickable ---------- */
+.nav-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  margin-left: 12px;
+  cursor: pointer;
+  z-index: 10002;
+  position: relative;
+}
+.nav-toggle svg { pointer-events: none; }
+
+/* Ensure nav has higher stacking context than other elements */
+.nav { z-index: 10001; }
+
+/* Ensure mobile drawer intercepts clicks */
+.nav-links { pointer-events: auto !important; }
+
+/* On very small screens make brand shrink to allow space for toggle */
+@media (max-width:420px){
+  .brand-name { font-size: 0.95rem; }
+  .brand img.logo { width:34px; height:34px; }
+}
+
 </style>
 <style>
   .sports-list {
