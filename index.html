@@ -273,6 +273,74 @@ form > * { min-width: 0; }
   z-index: 10001;
 }
 
+
+/* ---------- NAV: mobile overlap fix ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;          /* don't squish brand */
+  white-space: nowrap;
+}
+.brand img.logo {
+  flex-shrink: 0;          /* logo keeps its size */
+}
+.brand-name {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Ensure nav-inner distributes correctly */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;       /* prevent wrapping */
+  overflow: hidden;
+}
+
+/* On mobile, hide nav links earlier so brand doesn't overlap */
+@media (max-width: 480px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+
+
+/* ---------- Mobile hamburger menu styles ---------- */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  margin-left: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle svg { display:block; }
+
+/* Mobile menu: hidden by default */
+@media (max-width: 768px) {
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: linear-gradient(180deg, rgba(2,8,23,.95), rgba(2,6,23,.95));
+    border: 1px solid rgba(148,163,184,.12);
+    border-radius: 12px;
+    padding: 12px;
+    flex-direction: column;
+    min-width: 200px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    z-index: 10001;
+  }
+  .nav-links a { padding: 8px 12px; display:block; }
+  .nav-links.open { display: flex; }
+}
+
 </style>
 <style>
   .sports-list {
@@ -362,7 +430,16 @@ form > * { min-width: 0; }
       <img alt="Verletics icon" class="logo" src="Icon_Lite.png"/>
       <div class="brand-name">Verletics</div>
     </div>
-    <nav class="nav-links">
+
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect y="0.5" width="20" height="2" rx="1" fill="white"/>
+          <rect y="6" width="20" height="2" rx="1" fill="white"/>
+          <rect y="11.5" width="20" height="2" rx="1" fill="white"/>
+        </svg>
+      </button>
+
+<nav class="nav-links">
       <a href="#why">Why Verletics</a>
       <a href="#how">How it Works</a>
       <a href="#about">About us</a>
@@ -709,6 +786,41 @@ document.addEventListener("DOMContentLoaded", () => {
     q.addEventListener("click", () => {
       q.parentElement.classList.toggle("open");
     });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-links');
+  if(!toggle || !menu) return;
+
+  function setAria(expanded) {
+    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }
+
+  toggle.addEventListener('click', function(e) {
+    const isOpen = menu.classList.toggle('open');
+    setAria(isOpen);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape' && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      setAria(false);
+      toggle.focus();
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function(e) {
+    if(!menu.contains(e.target) && !toggle.contains(e.target) && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      setAria(false);
+    }
   });
 });
 </script>
