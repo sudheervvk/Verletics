@@ -13,7 +13,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Verletics – AI Sports Fitness App | Adaptive Training for Runners, Football, Badminton & More</title>
+<title>Verletics – Sports Fitness App | Adaptive Training for Runners, Football, Badminton & More</title>
 <meta name="description" content="Verletics is an AI-powered sports fitness app. Personalized adaptive training plans for running, football, badminton, tennis, basketball, cricket, and more. Train smarter, compete harder." />
 <meta name="keywords" content="
 AI fitness app, sports fitness training app, adaptive training plan app, personalized workout app, virtual coaching app, AI powered workout plan, athlete training app, sports conditioning workouts, HIIT workout app, functional fitness app, strength training app, endurance training app, speed & agility drills, no equipment workout app, workouts for runners, marathon training app, badminton footwork training, tennis agility training, football conditioning workouts, strength & power training, bodyweight training app, home workout routines, fitness app India, workout planner app, training drills for sports, mobility & flexibility training, calisthenics workout app, core strength training exercises, cardio training app, track performance in sport, live coaching via app, wearable integration fitness app, fitness tracking app, online sports coach, youth sports training, cross-training workouts, interval training app, sport specific fitness plan, training app for teams, recovery workouts & plans, warm up & cool down exercises, injury prevention workouts, sport performance monitoring, agility ladder exercises, plyometrics training, functional movement training, fitness plus nutrition plan, diet trackers + workout, weight loss workout app, body transformation program, fitness motivation tips, daily fitness challenges, sports fitness for women, sports fitness for men, senior fitness training, group workouts online, sports drills library, performance metrics tracking, strength & conditioning program, athlete skill development, sports science backed workouts, tournament preparation training, local fitness app India, best fitness app download, free fitness coaching app, subscription fitness app, AI driven sports coaching, mobile fitness trainer, warm up routines for athletes, cool down stretches app, sports biomechanics training, speed drills for football, court speed & footwork drills, conditioning for basketball, cycling training plans, running tracking and coaching, training log & progress tracker, flexibility routines, yoga & mobility workouts, sport performance enhancement, timed workouts & HIIT timer, custom training schedules, train smarter compete harder, push your limits app, fitness goals achievement plan, mind-body fitness integration, sport recovery & rest days, track calories & workouts, dynamic workout builder, fitness challenges monthly, expert coaching & feedback, coach on demand
@@ -26,7 +26,7 @@ AI fitness app, sports fitness training app, adaptive training plan app, persona
 <meta property="og:site_name" content="Verletics" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.verletics.com/" />
-<meta property="og:title" content="Verletics – AI Sports Fitness App | Adaptive Training for Runners, Football, Badminton & More" />
+<meta property="og:title" content="Verletics – Sports Fitness App | Adaptive Training for Runners, Football, Badminton & More" />
 <meta property="og:description" content="AI-powered sports training app with personalized adaptive plans for running, football, badminton, tennis, basketball, and more." />
 <meta property="og:image" content="https://www.verletics.com/verletics_social_preview.png?v=4" />
 <meta property="og:image:secure_url" content="https://www.verletics.com/verletics_social_preview.png?v=4" />
@@ -38,7 +38,7 @@ AI fitness app, sports fitness training app, adaptive training plan app, persona
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@Verletics" />
-<meta name="twitter:title" content="Verletics – AI Sports Fitness App | Adaptive Training for Athletes" />
+<meta name="twitter:title" content="Verletics – Sports Fitness App | Adaptive Training for Athletes" />
 <meta name="twitter:description" content="Personalized, adaptive AI training plans for runners, footballers, badminton players, and more. Train smarter, compete harder." />
 <meta name="twitter:image" content="https://www.verletics.com/verletics_social_preview.png?v=4" />
 
@@ -297,6 +297,58 @@ form > * { min-width: 0; }
     caret-color: #fff;
     border-radius: 9999px;
   }
+
+/* ---------- NAV: final fix for scrollbar + brand stacking ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  overflow: visible;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-inner {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  min-width: 0;
+}
+.brand-name {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0;
+}
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav a:focus, .btn:focus {
+  outline: 2px solid rgba(129,140,248,.18);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+@media (max-width: 768px) {
+  .nav-inner { height: 72px; padding: 0 16px; }
+  body { padding-top: 72px; }
+}
+
 </style>
 </head>
 <body>
@@ -324,13 +376,13 @@ form > * { min-width: 0; }
 <header class="hero">
 <div class="container hero-grid" id="main-content">
 <div>
-<h1 class="h1">AI Sports Fitness App – Train Smarter, Compete Harder</h1>
+<h1 class="h1">Sports Fitness App – Train Smarter, Compete Harder</h1>
 <p class="sub">Verletics is an AI-powered sports fitness app that creates personalized, adaptive training plans. Whether you’re a runner, footballer, badminton or tennis player, or into basketball and cricket, Verletics gives you sport-specific drills, evolving plans, and a Tournament Mode so you peak on competition day.</p>
 <div class="price-note">Launch Offer: <span id="price"></span>/month • First 100 lock in <strong>30% off for your first year</strong></div>
 <div style="margin-top:16px"><a class="btn" href="#cta">Join Early Access</a></div>
 </div>
 <div class="hero-card">
-<div class="phone-frame"><img alt="AI sports fitness app home screen showing daily training plan" class="screenshot" src="Home.png"/></div>
+<div class="phone-frame"><img alt="Sports Fitness App home screen showing daily training plan" class="screenshot" src="Home.png"/></div>
 </div>
 </div>
 </header>
@@ -352,7 +404,7 @@ form > * { min-width: 0; }
 <div class="container features">
 <div class="panel">
 <div class="text"><h2 class="section-title">App Home &amp; Readiness</h2><p class="muted">See exactly what to train today, with a dashboard that adapts to your readiness and logs.</p></div>
-<div class="phone-col"><div class="phone-frame"><img alt="AI sports fitness app training plan screen for runners and football players" class="screenshot" src="FitnessPlan1.png"/></div></div>
+<div class="phone-col"><div class="phone-frame"><img alt="Sports Fitness App training plan screen for runners and football players" class="screenshot" src="FitnessPlan1.png"/></div></div>
 </div>
 <div class="panel">
 <div class="text"><h2 class="section-title">Personalized, Sport-Specific Drills</h2><p class="muted">Build speed, agility, endurance, and strength with workouts tailored for football, badminton, tennis, cricket, running, and more.</p></div>
@@ -418,7 +470,6 @@ form > * { min-width: 0; }
         <li>Tennis Endurance &amp; Speed</li>
         <li>Basketball Strength &amp; Agility</li>
         <li>Cricket Stamina &amp; Power</li>
-        <li>Cycling Endurance Programs</li>
         <li>HIIT, Strength &amp; Functional Training</li>
       </ul>
     </div>
@@ -441,7 +492,7 @@ form > * { min-width: 0; }
 <div class="container">
 <h2 class="section-title">FAQs</h2>
 <div class="faq">
-<div class="qa"><div class="q"><h4>1. What makes this different from other fitness apps?</h4><span>+</span></div><div class="a">Most fitness apps give you static plans or generic workouts. Our platform uses adaptive AI that learns from your performance, fatigue, and goals—so your plan evolves as you do. It’s like having a personal coach in your pocket, but smarter and available 24/7.</div></div>
+<div class="qa"><div class="q"><h4>1. What makes this different from other fitness apps?</h4><span>+</span></div><div class="a">Most fitness apps and wearables like Garmin/ Apple/ Samsung give you static plans or generic workouts. Our platform uses adaptive AI that learns from your performance, fatigue, and goals—so your plan evolves as you do. It’s like having a personal coach in your pocket, but smarter and available 24/7.</div></div>
 
 <div class="qa"><div class="q"><h4>2. Do I need to be a professional athlete to use this?</h4><span>+</span></div><div class="a">Not at all! Whether you’re a weekend runner, a competitive amateur, or aiming for professional-level performance, the system adjusts to your level. Beginners get structured guidance, while advanced athletes benefit from progressive periodization and smarter load management.</div></div>
 
@@ -454,11 +505,11 @@ form > * { min-width: 0; }
 <div class="qa"><div class="q"><h4>6. What do I get by joining the waitlist now?</h4><span>+</span></div><div class="a">Early access to the platform before public launch, 30% off for your first year, and a direct line to influence features as we build. You’re not just signing up—you’re shaping the future of AI-powered sports training.</div></div>
 
 <!-- Additional SEO FAQ items -->
-<div class="qa"><div class="q"><h4>Which sports does Verletics support?</h4><span>+</span></div><div class="a">Verletics supports running, football, badminton, tennis, basketball, cricket, cycling, and more—each with sport-specific drills and adaptive plans.</div></div>
+<div class="qa"><div class="q"><h4>7. Which sports does Verletics support?</h4><span>+</span></div><div class="a">Verletics supports running, football, badminton, tennis, basketball, cricket, cycling, and more—each with sport-specific drills and adaptive plans.</div></div>
 
-<div class="qa"><div class="q"><h4>Can Verletics help with marathon or endurance training?</h4><span>+</span></div><div class="a">Yes. Verletics builds structured marathon training plans with progressive load, endurance drills, and tapering so you peak on race day.</div></div>
+<div class="qa"><div class="q"><h4>8. Can Verletics help with marathon or endurance training?</h4><span>+</span></div><div class="a">Yes. Verletics builds structured marathon training plans with progressive load, endurance drills, and tapering so you peak on race day.</div></div>
 
-<div class="qa"><div class="q"><h4>Is this app suitable for beginners?</h4><span>+</span></div><div class="a">Absolutely. Beginners get structured guidance with step-by-step workouts, while advanced athletes benefit from progressive periodization and smarter load management.</div></div>
+<div class="qa"><div class="q"><h4>9. Is this app suitable for beginners?</h4><span>+</span></div><div class="a">Absolutely. Beginners get structured guidance with step-by-step workouts, while advanced athletes benefit from progressive periodization and smarter load management.</div></div>
 
 </div>
 </div>
